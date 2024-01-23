@@ -22,11 +22,11 @@ h1,h2,h3,h4,h5,h6{
 .wrapper1{
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
-  width: 60vh;
+  width: 60vw;
   flex: 1;
 }
 
-.content1{
+.content{
   padding: 10px ;
 }
 
@@ -55,4 +55,63 @@ h1,h2,h3,h4,h5,h6{
 
 .tabs li a.active{
   border-bottom: 2px solid #ccc;
+}
+
+.coinwrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.coinwrapper:hover{
+  /* background: linear-gradient(to right, #b92b27, #1565c0); */
+  /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); */
+  /* background: linear-gradient(0.25turn, #eeaeca,  #94bbe9); */
+  background: linear-gradient(0.25turn, #833ab4, #f73f3f,  #fcb045);
+  scale: 1.04;
+}
+
+.coinwrapper .left{
+  display: flex;
+  min-width: 60%;
+}
+
+.icon{
+  margin-right: 10px;
+}
+
+.description{
+  padding: 5px;
+}
+
+.description h4{
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.description p{
+  font-weight: 300;
+}
+
+.highlow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlow span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.chart{
+width: 100%;  
 }

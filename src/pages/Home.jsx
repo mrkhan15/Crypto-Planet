@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <div className="wrapper1">
-        <div className="content1">
+        <div className="content">
           {data.map((x)=>{
             return<div className="coinwrapper">
               <div className="left">
@@ -23,12 +23,12 @@ export default function Home() {
                     <span><small>(24h High-Low)</small></span>
                   </div>
                 </div>
-                <div className="chart">
+              </div>
+              <div className="chart">
                   <Sparklines data={x.sparkline_in_7d.price} width={120} height={20} margin={5}>
                     <SparklinesCurve color='#fff'></SparklinesCurve>
                   </Sparklines>
                 </div>
-              </div>
             </div>
           })}
         </div>
