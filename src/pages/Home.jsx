@@ -2,14 +2,23 @@ import React from 'react';
 import data from '../assets/data.json';
 import {ArrowUp, ArrowDown} from 'react-feather';
 import {Sparklines, SparklinesCurve} from 'react-sparklines';
+import { useNavigate } from 'react-router-dom';
+
+
 
 export default function Home() {
+  
+  const navigate = useNavigate ();
+  const gotopage = (val) => {
+    navigate('/coin',{state:{id:val}})
+  }
+
   return (
     <div>
       <div className="wrapper1">
         <div className="content">
           {data.map((x)=>{
-            return<div className="coinwrapper">
+            return<div className="coinwrapper" onClick={()=> gotopage(x.id)}>
               <div className="left">
                 <div className="icon">
                   <img src={x.image} width={70} alt="" />
