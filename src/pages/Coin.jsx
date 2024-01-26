@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'react-feather';
+import { ArrowLeft, PlusCircle } from 'react-feather';
 import Api from '../api/Api';
 import {Sparklines, SparklinesCurve} from 'react-sparklines';
 
@@ -21,7 +21,7 @@ const Coin = () => {
       <div className="content">
         <div className="header">
           <h4>Coin Details</h4>
-          <button className='btn'>
+          <button className='btn' onClick={() => navigate(-1)}>
             <ArrowLeft></ArrowLeft>&nbsp; Back
           </button>
         </div>
@@ -45,7 +45,46 @@ const Coin = () => {
               </Sparklines>
           </div>
           <div className="marketdata">
-            <span className="row"></span>
+            <span className="row">
+              <span>Circulating Supply</span>
+              <span>{coins.market_data.circulating_supply}</span>
+            </span>
+            <span className="row">
+              <span>Total Supply</span>
+              <span>{coins.market_data.total_supply}</span>
+            </span>
+            <span className="row">
+              <span>max Supply</span>
+              <span>{coins.market_data.max_supply}</span>
+            </span>
+          </div>
+          <br />
+          <h4>Price change in %</h4>
+          <div className="pricechange mt-4">
+            <span className="col">
+              <span>24h</span>
+              <span>{coins.market_data.price_change_percentage_24h.toFixed(2)}</span>
+            </span>
+            <span className="col">
+              <span>7d</span>
+              <span>{coins.market_data.price_change_percentage_7d.toFixed(2)}</span>
+            </span>
+            <span className="col">
+              <span>14d</span>
+              <span>{coins.market_data.price_change_percentage_14d.toFixed(2)}</span>
+            </span>
+            <span className="col">
+              <span>30d</span>
+              <span>{coins.market_data.price_change_percentage_30d.toFixed(2)}</span>
+            </span>
+            <span className="col">
+              <span>1y</span>
+              <span>{coins.market_data.price_change_percentage_1y.toFixed(2)}</span>
+            </span>
+          </div>
+
+          <div className="btn mt-4" onClick={()=> addtoWatchlist(coins.id)}>
+            <PlusCircle></PlusCircle>&nbsp; Add to Watchlist
           </div>
         
         </div>}

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import data from '../assets/data.json';
+import Api from '../api/Api';
 import {ArrowUp, ArrowDown} from 'react-feather';
 import {Sparklines, SparklinesCurve} from 'react-sparklines';
 import { useNavigate } from 'react-router-dom';
@@ -37,7 +38,7 @@ export default function Home() {
                   <Sparklines data={x.sparkline_in_7d.price} width={120} height={20} margin={5}>
                     <SparklinesCurve color='#fff'></SparklinesCurve>
                   </Sparklines>
-                </div>
+              </div>
             </div>
           })}
         </div>

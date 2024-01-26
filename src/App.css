@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&family=Roboto&display=swap');
 
 body{
-  background-color: #dadafa;
+  /* background-color: #dadafa; */
+  /* background: linear-gradient(0.25turn, #b0de53, #00a1fd); */
+  background: linear-gradient(90deg, rgba(176,222,83,1) 0%, rgba(0,161,253,0.7849264705882353) 100%);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -162,3 +164,42 @@ width: 100%;
   padding: 10px;
   margin-bottom: 10px;
 }
+
+.mt-4{
+  margin-top: 15px;
+
+}
+
+.marketdata{
+  font-size: 14px;
+}
+
+.marketdata .row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  padding: 10px 5px;
+}
+
+.pricechange{
+  display: flex;
+  flex-direction: row;
+}
+
+.pricechange .col{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 1px;
+}
+
+.pricechange .col span{
+ border: 1px solid ;
+ font-size: 14px;
+ padding: 5px;
+}
+
+.pricechange .col span:first-child{
+  background: rgba(255, 255, 255, 0.2);
+ }
