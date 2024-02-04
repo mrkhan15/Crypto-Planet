@@ -8,7 +8,18 @@ const getCoin  = (id) => {
     })
 }
 
-export default {getCoin};
+const getWatchlist  = (ids) => {
+    return axios.get(`${API_URL}/coins/markets?vs_currency=USD&ids=${ids}&order=market_cap_desc&per_page=5&page=1&sparkline=false&locale=en`).then((response)=>{
+        return response.data;
+    })
+}
+
+// const getWatchlist  = (ids) => {
+//     return axios.get(`${API_URL}/coins/${ids}?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=true`).then((response)=>{
+//         return response.data;
+//     })
+// }
+
+export default {getCoin, getWatchlist};
 
 
-// /coins/markets?vs_currency=USD&order=market_cap_desc&per_page=20&page=1&sparkline=true&locale=en

@@ -20,7 +20,7 @@ Watchlist() {
       let ids = storage.getStorage('watchlist');
       let coindata = await Api.getWatchlist(ids.join());
       if(coindata){
-        setCoins(coindata);
+        setCoins(x);
       }
     })();
   },[]);
@@ -29,7 +29,7 @@ Watchlist() {
     <div>
         <div className="wrapper1">
         <div className="content">
-          {coins && coins.map((x)=>{
+          {data.map((x)=>{
             return<div className="coinwrapper" onClick={()=> gotopage(x.id)}>
               <div className="left">
                 <div className="icon">

@@ -3,11 +3,14 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, PlusCircle } from 'react-feather';
 import Api from '../api/Api';
 import {Sparklines, SparklinesCurve} from 'react-sparklines';
+// import { LineChart, Line } from 'recharts';
+import storage from '../utils/storage';
 
 const Coin = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [coins,setCoins] = useState(null);
+  
   useEffect(()=>{ 
     (async function(){
       let coindata = await Api.getCoin(location.state.id);
@@ -15,7 +18,18 @@ const Coin = () => {
         setCoins(coindata);
       }
     })();
-  }, [])
+  }, []);
+  const addtoWatchlist =(id) => {
+    let watchlist = storage.getStorage('watchlist');
+    if (watchlist){
+      watchlist.push(coins.id);
+      let unique= [...new Set(watchlist)]
+      storage.setStorage('watchlist',unique)
+    }
+    else{
+      storage.setStorage('watchlist',[coins.id]);
+    }
+  }
   return (
     <div className='wrapper1'>
       <div className="content">
@@ -83,7 +97,7 @@ const Coin = () => {
             </span>
           </div>
 
-          <div className="btn mt-4" onClick={()=> addtoWatchlist(coins.id)}>
+          <div className="btn mt-4" onClick={()=> addtoWatchlist()}>
             <PlusCircle></PlusCircle>&nbsp; Add to Watchlist
           </div>
         
