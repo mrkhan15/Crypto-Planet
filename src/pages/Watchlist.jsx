@@ -46,7 +46,7 @@ Watchlist() {
                 </div>
               </div>
               <div className="chart">
-                  <Sparklines data={x.sparkline_in_7d.price} width={120} height={20} margin={5}>
+                  <Sparklines data={coins.sparkline_in_7d_price} width={120} height={20} margin={5}>
                     <SparklinesCurve color='#fff'></SparklinesCurve>
                   </Sparklines>
               </div>
